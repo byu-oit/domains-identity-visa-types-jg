@@ -1,0 +1,19 @@
+version: 1
+
+name: domains-identity-visa-types-jg
+
+pipelines:
+  dev:
+    phases:
+    - type: github
+      name: GitHub
+      owner: byu-oit
+      repo: domains-identity-visa-types-jg
+      branch: master
+    - type: codebuild
+      name: Build
+      build_image: aws/codebuild/nodejs:6.3.1
+    - type: handel
+      name: Deploy
+      environments_to_deploy:
+      - dev

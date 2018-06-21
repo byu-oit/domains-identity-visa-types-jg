@@ -1,0 +1,988 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "identityVisaType",
+    "description": "==> Place your description here",
+    "version": "v1",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "api.byu.edu",
+  "schemes": [
+    "https"
+  ],
+  "basePath": "/domains/identity/visa_types",
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/": {
+      "x-controller": "visa_types",
+      "get": {
+        "summary": "identity Codes",
+        "description": "Retrieve a collection of visa_types",
+        "operationId": "getVisaTypes",
+        "parameters": [
+          {
+            "name": "visa_type_query",
+            "in": "query",
+            "description": "visa_type query parameter.",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "$ref": "#/parameters/page_start"
+          },
+          {
+            "$ref": "#/parameters/page_size"
+          }
+        ],
+        "tags": [
+          "identity",
+          "Codes"
+        ],
+        "responses": {
+          "200": {
+            "description": "A collection of visa_types",
+            "schema": {
+              "$ref": "#/definitions/visa_types"
+            },
+            "examples": {
+              "application/json": {
+                "$ref": "#/x-mock_json/visa_types"
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/responses/400"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          },
+          "403": {
+            "$ref": "#/responses/403"
+          },
+          "409": {
+            "$ref": "#/responses/409"
+          },
+          "default": {
+            "$ref": "#/responses/default"
+          }
+        }
+      },
+      "post": {
+        "summary": "identity Codes",
+        "description": "Creates a visa_type",
+        "operationId": "createVisaType",
+        "parameters": [
+          {
+            "name": "visa_type",
+            "in": "body",
+            "description": "New visa_type values",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/visa_type_new"
+            }
+          }
+        ],
+        "tags": [
+          "identity",
+          "Codes"
+        ],
+        "responses": {
+          "201": {
+            "description": "visa_type successfully created",
+            "schema": {
+              "$ref": "#/definitions/visa_type_data"
+            },
+            "examples": {
+              "application/json": {
+                "$ref": "#/x-mock_json/visa_types/values/0"
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/responses/400"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          },
+          "403": {
+            "$ref": "#/responses/403"
+          },
+          "409": {
+            "$ref": "#/responses/409"
+          },
+          "default": {
+            "$ref": "#/responses/default"
+          }
+        }
+      }
+    },
+    "/{visa_type}": {
+      "x-controller": "visa_type",
+      "parameters": [
+        { "$ref": "#/parameters/visa_type" }
+      ],
+      "get": {
+        "summary": "identity Codes",
+        "description": "Retrieve a specific visa_type",
+        "operationId": "getVisaType",
+        "tags": [
+          "identity",
+          "Codes"
+        ],
+        "responses": {
+          "200": {
+            "description": "A specific visa_type",
+            "schema": {
+              "$ref": "#/definitions/visa_type_data"
+            },
+            "examples": {
+              "application/json": {
+                "$ref": "#/x-mock_json/visa_types/values/0"
+              }
+            }
+          },
+          "400": { "$ref": "#/responses/400" },
+          "401": { "$ref": "#/responses/401" },
+          "403": { "$ref": "#/responses/403" },
+          "404": {
+            "description": "There is no matching visa_type",
+            "schema": {
+              "$ref": "#/definitions/error_response"
+            }
+          },
+          "409": { "$ref": "#/responses/409" },
+          "default": { "$ref": "#/responses/default" }
+        }
+      },
+      "put": {
+        "summary": "identity Codes",
+        "description": "Modify a visa_type",
+        "operationId": "modifyVisaType",
+        "parameters": [
+          {
+            "name": "visa_type_modify",
+            "in": "body",
+            "description": "Values required to modify a visa_type",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/visa_type_new"
+            }
+          }
+        ],
+        "tags": [
+          "identity",
+          "Codes"
+        ],
+        "responses": {
+          "200": {
+            "description": "visa_type successfully Modified",
+            "schema": {
+              "$ref": "#/definitions/visa_type_data"
+            },
+            "examples": {
+              "application/json": {
+                "$ref": "#/x-mock_json/visa_types/values/0"
+              }
+            }
+          },
+          "400": { "$ref": "#/responses/400" },
+          "401": { "$ref": "#/responses/401" },
+          "403": { "$ref": "#/responses/403" },
+          "404": {
+            "description": "There is no matching visa_type",
+            "schema": {
+              "$ref": "#/definitions/error_response"
+            }
+          },
+          "409": { "$ref": "#/responses/409" },
+          "default": { "$ref": "#/responses/default" }
+        }
+      },
+      "delete": {
+        "summary": "identity Codes",
+        "description": "Removes a visa_type",
+        "operationId": "removeVisaType",
+        "tags": [
+          "identity",
+          "Codes"
+        ],
+        "responses": {
+          "204": {
+            "description": "visa_type successfully Removed"
+          },
+          "400": { "$ref": "#/responses/400" },
+          "401": { "$ref": "#/responses/401" },
+          "403": { "$ref": "#/responses/403" },
+          "default": { "$ref": "#/responses/default" }
+        }
+      }
+    },
+    "/{visa_type}/logs": {
+      "x-controller": "visa_type_logs",
+      "parameters": [
+        { "$ref": "#/parameters/visa_type" }
+      ],
+      "get": {
+        "summary": "identity Codes Archive",
+        "description": "Retrieve the collection of logs for a visa_type",
+        "operationId": "getVisaTypeLogs",
+        "tags": [
+          "identity",
+          "Codes"
+        ],
+        "responses": {
+          "200": {
+            "description": "A collection of visa_type Logs",
+            "schema": {
+              "$ref": "#/definitions/visa_type_logs"
+            },
+            "examples": {
+              "application/json": {
+                "$ref": "#/x-mock_json/visa_type_logs"
+              }
+            }
+          },
+          "400": { "$ref": "#/responses/400" },
+          "401": { "$ref": "#/responses/401" },
+          "403": { "$ref": "#/responses/403" },
+          "404": {
+            "description": "There is no matching visa_type",
+            "schema": {
+              "$ref": "#/definitions/error_response"
+            }
+          },
+          "409": { "$ref": "#/responses/409" },
+          "default": { "$ref": "#/responses/default" }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "visa_types": {
+      "description": "The visa_type collection",
+      "type": "object",
+      "required": [
+        "values"
+      ],
+      "properties": {
+        "links": {
+          "description": "Hypermedia Links that impact the visa_type collection",
+          "type": "object",
+          "properties": {
+            "visa_types__info": {
+              "type": "object",
+              "properties": {
+                "rel": {
+                  "type": "string",
+                  "enum": [
+                    "self"
+                  ],
+                  "default": "self"
+                },
+                "href": {
+                  "type": "string",
+                  "format": "uri",
+                  "default": "https://api.byu.edu/domains/identity/visa_types/v1?page_start=51&page_size=50"
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "GET"
+                  ],
+                  "default": "GET"
+                }
+              }
+            },
+            "visa_types__prev": {
+              "type": "object",
+              "properties": {
+                "rel": {
+                  "type": "string",
+                  "enum": [
+                    "visa_types__prev"
+                  ],
+                  "default": "visa_types__prev"
+                },
+                "href": {
+                  "type": "string",
+                  "format": "uri",
+                  "default": "https://api.byu.edu/domains/identity/visa_types/v1?page_start=:page_start&page_size=:page_size"
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "GET"
+                  ],
+                  "default": "GET"
+                }
+              }
+            },
+            "visa_types__next": {
+              "type": "object",
+              "properties": {
+                "rel": {
+                  "type": "string",
+                  "enum": [
+                    "visa_types__next"
+                  ],
+                  "default": "visa_types__next"
+                },
+                "href": {
+                  "type": "string",
+                  "format": "uri",
+                  "default": "https://api.byu.edu/domains/identity/visa_types/v1?page_start=:page_start1&page_size=:page_size"
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "GET"
+                  ],
+                  "default": "GET"
+                }
+              }
+            },
+            "visa_types__create": {
+              "type": "object",
+              "properties": {
+                "rel": {
+                  "type": "string",
+                  "enum": [
+                    "visa_types__create"
+                  ],
+                  "default": "visa_types__create"
+                },
+                "href": {
+                  "type": "string",
+                  "format": "uri",
+                  "default": "https://api.byu.edu/domains/identity/visa_types/v1"
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "POST"
+                  ],
+                  "default": "POST"
+                }
+              }
+            }
+          }
+        },
+        "metadata": {
+          "$ref": "#/definitions/sub_level_metadata"
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/visa_type_data"
+          }
+        }
+      },
+      "example": {
+        "$ref": "#/x-mock_json/visa_types"
+      }
+    },
+    "visa_type_data": {
+      "description": "A visa_type",
+      "type": "object",
+      "properties": {
+        "links": {
+          "description": "Hypermedia Links that impact this visa_type",
+          "type": "object",
+          "properties": {
+            "visa_types__info": {
+              "description": "Hypermedia link to retrieve this visa_type",
+              "type": "object",
+              "required": [
+                "rel",
+                "href",
+                "method"
+              ],
+              "properties": {
+                "rel": {
+                  "type": "string",
+                  "enum": [
+                    "self"
+                  ],
+                  "default": "self"
+                },
+                "href": {
+                  "type": "string",
+                  "format": "uri",
+                  "default": "https://api.byu.edu/domains/identity/visa_types/v1/:visa_type"
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "GET"
+                  ],
+                  "default": "GET"
+                }
+              }
+            },
+            "visa_types__modify": {
+              "description": "Hypermedia link to modify this visa_type",
+              "type": "object",
+              "required": [
+                "rel",
+                "href",
+                "method"
+              ],
+              "properties": {
+                "rel": {
+                  "type": "string",
+                  "enum": [
+                    "visa_types__modify"
+                  ],
+                  "default": "visa_types__modify"
+                },
+                "href": {
+                  "type": "string",
+                  "format": "uri",
+                  "default": "https://api.byu.edu/domains/identity/visa_types/v1/:visa_type"
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "PUT"
+                  ],
+                  "default": "PUT"
+                }
+              }
+            },
+            "visa_types__remove": {
+              "description": "Hypermedia link to remove this visa_type",
+              "type": "object",
+              "required": [
+                "rel",
+                "href",
+                "method"
+              ],
+              "properties": {
+                "rel": {
+                  "type": "string",
+                  "enum": [
+                    "visa_types__remove"
+                  ],
+                  "default": "visa_types__remove"
+                },
+                "href": {
+                  "type": "string",
+                  "format": "uri",
+                  "default": "https://api.byu.edu/domains/identity/visa_types/v1/:visa_type"
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "DELETE"
+                  ],
+                  "default": "DELETE"
+                }
+              }
+            }
+          }
+        },
+        "metadata": {
+          "$ref": "#/definitions/simple_metadata"
+        },
+        "visa_type": {
+          "$ref": "#/definitions/visa_type"
+        },
+        "description": {
+          "$ref": "#/definitions/description"
+        },
+        "long_description": {
+          "$ref": "#/definitions/long_description"
+        },
+        "active_status": {
+          "$ref": "#/definitions/active_status"
+        },
+        "updated_by_id": {
+          "$ref": "#/definitions/updated_by_id"
+        },
+        "date_time_updated": {
+          "$ref": "#/definitions/date_time_updated"
+        }
+      },
+      "example": {
+        "$ref": "#/x-mock_json/visa_types/values/0"
+      }
+    },
+    "visa_type_new": {
+      "description": "Elements required to add a new visa_type",
+      "type": "object",
+      "properties": {
+        "visa_type": {
+          "$ref": "#/definitions/visa_type"
+        },
+        "description": {
+          "$ref": "#/definitions/description"
+        },
+        "long_description": {
+          "$ref": "#/definitions/long_description"
+        },
+        "active_status": {
+          "$ref": "#/definitions/active_status"
+        }
+     },
+      "example": {
+        "$ref": "#/x-mock_json/visa_type_new"
+      }
+    },
+    "visa_type_logs": {
+      "description": "Change Logs for visa_type API",
+      "type": "object",
+      "properties": {
+        "links": {
+          "description": "Hypermedia Links that impact the log collection for visa_type",
+          "type": "object",
+          "properties": {
+            "visa_type_logs__info": {
+              "type": "object",
+              "properties": {
+                "rel": {
+                  "type": "string",
+                  "enum": [
+                    "self"
+                  ],
+                  "default": "self"
+                },
+                "href": {
+                  "type": "string",
+                  "format": "uri",
+                  "default": "https://api.byu.edu/domains/identity/visa_types/v1/:visa_type/logs?page_start=:page_start&page_size=:page_size"
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "GET"
+                  ],
+                  "default": "GET"
+                }
+              }
+            },
+            "visa_type_logs__prev": {
+              "type": "object",
+              "properties": {
+                "rel": {
+                  "type": "string",
+                  "enum": [
+                    "visa_type_logs__prev"
+                  ],
+                  "default": "visa_type_logs__prev"
+                },
+                "href": {
+                  "type": "string",
+                  "format": "uri",
+                  "default": "https://api.byu.edu/domains/identity/visa_types/v1/:visa_type/logs?page_start=:page_start&page_size=:page_size"
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "GET"
+                  ],
+                  "default": "GET"
+                }
+              }
+            },
+            "visa_type_logs__next": {
+              "type": "object",
+              "properties": {
+                "rel": {
+                  "type": "string",
+                  "enum": [
+                    "visa_type_logs__next"
+                  ],
+                  "default": "visa_type_logs__next"
+                },
+                "href": {
+                  "type": "string",
+                  "format": "uri",
+                  "default": "https://api.byu.edu/domains/identity/visa_types/v1/:visa_type/logs?page_start=:page_start1&page_size=:page_size"
+                },
+                "method": {
+                  "type": "string",
+                  "enum": [
+                    "GET"
+                  ],
+                  "default": "GET"
+                }
+              }
+            }
+          }
+        },
+        "metadata": {
+          "$ref": "#/definitions/sub_level_metadata"
+        },
+        "values": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/visa_type_log"
+          }
+        }
+      },
+      "example": {
+        "$ref": "#/x-mock_json/visa_type_logs"
+      }
+    },
+    "visa_type_log": {
+      "description": "Change Log for visa_type API",
+      "type": "object",
+      "properties": {
+        "log_id": {
+          "$ref": "#/definitions/log_id"
+        },
+        "log_action": {
+          "$ref": "#/definitions/log_action"
+        },
+        "visa_type": {
+          "$ref": "#/definitions/visa_type"
+        },
+        "description": {
+          "$ref": "#/definitions/description"
+        },
+        "long_description": {
+          "$ref": "#/definitions/long_description"
+        },
+        "active_status": {
+          "$ref": "#/definitions/active_status"
+        },
+        "updated_by_id": {
+          "$ref": "#/definitions/updated_by_id"
+        },
+        "date_time_updated": {
+          "$ref": "#/definitions/date_time_updated"
+        }
+      },
+      "example": {
+        "$ref": "#/x-mock_json/visa_type_logs/values/0"
+      }
+    },
+    "error_response": {
+      "type": "object",
+      "required": ["metadata"],
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/simple_metadata"
+        }
+      }
+    },
+    "simple_metadata": {
+      "type": "object",
+      "required": ["validation_response"],
+      "properties": {
+        "validation_response": {
+          "type": "object",
+          "required": [
+            "code",
+            "message"
+          ],
+          "properties": {
+            "code": {
+              "type": "integer"
+            },
+            "message": {
+              "type": "string"
+            }
+          }
+        },
+        "validation_information": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cache": {
+          "description": "If data is from live source, value will be null, otherwise it will be date-time of cache",
+          "type": "object",
+          "properties": {
+            "date_time": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        }
+      }
+    },
+    "sub_level_metadata": {
+      "allOf": [
+        {
+          "type": "object",
+          "properties": {
+            "collection_size": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "page_start": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "page_end": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "page_size": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "default_page_size": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "max_page_size": {
+              "type": "integer"
+            }
+          }
+        },
+        {
+          "$ref": "#/definitions/simple_metadata"
+        }
+      ]
+    },
+    "visa_type": {
+      "description": "visa_type",
+      "type": "string",
+      "example": {
+        "$ref": "#/x-mock_json/visa_types/values/0/visa_type"
+      }
+    },
+    "active_status": {
+      "description": "Is the code currently active or only used for archive purposes?",
+      "type": "string",
+      "example": {
+        "$ref": "#/x-mock_json/visa_types/values/0/active_status"
+      }
+    },
+    "date_time_updated": {
+      "description": "When was the visa_type's data last updated?",
+      "type": "string",
+      "example": {
+        "$ref": "#/x-mock_json/visa_types/values/0/date_time_updated"
+      }
+    },
+    "description": {
+      "description": "visa_type Short Description",
+      "type": "string",
+      "example": {
+        "$ref": "#/x-mock_json/visa_types/values/0/description"
+      }
+    },
+    "log_action": {
+      "description": "What function was performed on the visa_type",
+      "type": "string",
+      "enum": [
+        "visa_types__create",
+        "visa_types__modify",
+        "visa_types__remove"
+      ],
+      "example": { "$ref": "#/x-mock_json/visa_type_logs/values/0/log_action" }
+    },
+    "log_id": {
+      "description": "Unique identifier assigned to each log record",
+      "type": "string",
+      "example": { "$ref": "#/x-mock_json/visa_type_logs/values/0/log_id" }
+    },
+    "long_description": {
+      "description": "visa_type Long Description",
+      "type": "string",
+      "example": {
+        "$ref": "#/x-mock_json/visa_types/values/0/long_description"
+      }
+    },
+    "updated_by_id": {
+      "description": "Who last updated the visa_type's data?",
+      "type": "string",
+      "example": {
+        "$ref": "#/x-mock_json/visa_types/values/0/updated_by_id"
+      }
+    }
+  },
+  "parameters": {
+    "visa_type": {
+      "name": "visa_type",
+      "in": "path",
+      "description": "visa_type path parameter",
+      "required": true,
+      "type": "string"
+    },
+    "page_start": {
+      "name": "page_start",
+      "in": "query",
+      "description": "Skip into a large collection to this item",
+      "required": false,
+      "type": "string"
+    },
+    "page_size": {
+      "name": "page_size",
+      "in": "query",
+      "description": "Return this many items of a large collection",
+      "required": false,
+      "type": "string"
+    }
+  },
+  "responses": {
+    "400": {
+      "description": "Invalid Request - unable to interpret request",
+      "schema": {
+        "$ref": "#/definitions/error_response"
+      }
+    },
+    "401": {
+      "description": "Authentication required to access data",
+      "schema": {
+        "$ref": "#/definitions/error_response"
+      }
+    },
+    "403": {
+      "description": "Access denied to protected data",
+      "schema": {
+        "$ref": "#/definitions/error_response"
+      }
+    },
+    "409": {
+      "description": "Query parameters conflict or are malformed",
+      "schema": {
+        "$ref": "#/definitions/error_response"
+      }
+    },
+    "default": {
+      "description": "Unexpected error",
+      "schema": {
+        "$ref": "#/definitions/error_response"
+      }
+    }
+  },
+  "x-mock_json": {
+    "visa_types": {
+      "links": {
+        "visa_types__info": {
+          "rel": "self",
+          "href": "https://api.byu.edu/domains/identity/visa_types/v1?page_start=51&page_size=50",
+          "method": "GET"
+        },
+        "visa_types__prev": {
+          "rel": "visa_types__prev",
+          "href": "https://api.byu.edu/domains/identity/visa_types/v1?page_start=1&page_size=50",
+          "method": "GET"
+        },
+        "visa_types__next": {
+          "rel": "visa_types__next",
+          "href": "https://api.byu.edu/domains/identity/visa_types/v1?page_start=101&page_size=50",
+          "method": "GET"
+        },
+        "visa_types__create": {
+          "rel": "visa_types__create",
+          "href": "https://api.byu.edu/domains/identity/visa_types/v1",
+          "method": "POST"
+        }
+      },
+      "metadata": {
+        "collection_size": 1,
+        "page_start": 1,
+        "page_end": 1,
+        "page_size": 1,
+        "default_page_size": 50,
+        "max_page_size": 1000,
+        "cache": {
+          "date_time": "2014-05-11T13:45:53.200Z"
+        },
+        "validation_response": {
+          "code": 200,
+          "message": "Retrieve Successful"
+        }
+      },
+      "values": [
+        {
+          "links": {
+            "visa_types__info": {
+              "rel": "self",
+              "href": "https://api.byu.edu/domains/identity/visa_types/v1/visa_type",
+              "method": "GET"
+            },
+            "visa_types__modify": {
+              "rel": "visa_types__modify",
+              "href": "https://api.byu.edu/domains/identity/visa_types/v1/visa_type",
+              "method": "PUT"
+            },
+            "visa_types__remove": {
+              "rel": "visa_types__remove",
+              "href": "https://api.byu.edu/domains/identity/visa_types/v1/visa_type",
+              "method": "DELETE"
+            }
+          },
+          "metadata": {
+            "cache": {
+              "date_time": "2014-05-11T13:45:53.200Z"
+            },
+            "validation_response": {
+              "code": 200,
+              "message": "Successful"
+            }
+          },
+          "visa_type": "visa_type",
+          "description": "visa_type",
+          "long_description": "visa_type",
+          "active_status": "Y",
+          "updated_by_id": "111111111",
+          "date_time_updated": "2014-05-11T13:45:53.200Z"
+        }
+      ]
+    },
+    "visa_type_logs": {
+      "links": {
+        "visa_type_logs__info": {
+          "rel": "self",
+          "href": "https://api.byu.edu/domains/identity/visa_types/v1/visa_type/logs?page_start=51&page_size=50",
+          "method": "GET"
+        },
+        "visa_type_logs__prev": {
+          "rel": "visa_type_logs__prev",
+          "href": "https://api.byu.edu/domains/identity/visa_types/v1/visa_type/logs?page_start=1&page_size=50",
+          "method": "GET"
+        },
+        "visa_type_logs__next": {
+          "rel": "visa_type_logs__next",
+          "href": "https://api.byu.edu/domains/identity/visa_types/v1/visa_type/logs?page_start=101&page_size=50",
+          "method": "GET"
+        }
+      },
+      "metadata": {
+        "collection_size": 1,
+        "page_start": 1,
+        "page_end": 1,
+        "page_size": 1,
+        "default_page_size": 50,
+        "max_page_size": 1000,
+        "cache": {
+          "date_time": "2014-05-11T13:45:53.200Z"
+        },
+        "validation_response": {
+          "code": 200,
+          "message": "Successful"
+        }
+      },
+      "values": [
+        {
+          "log_id": "4128395402",
+          "log_action": "visa_types__create",
+          "visa_type": "visa_type",
+          "description": "visa_type",
+          "long_description": "visa_type",
+          "active_status": "Y",
+          "updated_by_id": "111111111",
+          "date_time_updated": "2014-05-11T13:45:53.200Z"
+        }
+      ]
+    },
+    "visa_type_new": {
+      "visa_type": "visa_type",
+      "description": "visa_type",
+      "long_description": "visa_type",
+      "active_status": "Y"
+    }
+  }
+}
