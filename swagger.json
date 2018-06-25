@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "identityVisaType",
-    "description": "==> Place your description here",
+    "description": "US Visa Types for CES School Admissions",
     "version": "v1",
     "license": {
       "name": "Apache 2.0",
@@ -21,7 +21,7 @@
     "/": {
       "x-controller": "visa_types",
       "get": {
-        "summary": "identity Codes",
+        "summary": "Get all Visa Types",
         "description": "Retrieve a collection of visa_types",
         "operationId": "getVisaTypes",
         "parameters": [
@@ -73,7 +73,7 @@
         }
       },
       "post": {
-        "summary": "identity Codes",
+        "summary": "Create a new Visa Type",
         "description": "Creates a visa_type",
         "operationId": "createVisaType",
         "parameters": [
@@ -127,7 +127,7 @@
         { "$ref": "#/parameters/visa_type" }
       ],
       "get": {
-        "summary": "identity Codes",
+        "summary": "Get one specific visa_type",
         "description": "Retrieve a specific visa_type",
         "operationId": "getVisaType",
         "tags": [
@@ -160,7 +160,7 @@
         }
       },
       "put": {
-        "summary": "identity Codes",
+        "summary": "Change a specific visa_type",
         "description": "Modify a visa_type",
         "operationId": "modifyVisaType",
         "parameters": [
@@ -204,7 +204,7 @@
         }
       },
       "delete": {
-        "summary": "identity Codes",
+        "summary": "Delete a specific visa_type",
         "description": "Removes a visa_type",
         "operationId": "removeVisaType",
         "tags": [
@@ -799,6 +799,15 @@
       "example": {
         "$ref": "#/x-mock_json/visa_types/values/0/updated_by_id"
       }
+    },
+    "error": {
+      "description": "Error body",
+      "type": "object",
+      "properties": {
+        "metadata": {
+          "$ref": "#/definitions/simple_metadata"
+        }
+      }
     }
   },
   "parameters": {
@@ -828,25 +837,25 @@
     "400": {
       "description": "Invalid Request - unable to interpret request",
       "schema": {
-        "$ref": "#/definitions/error_response"
+        "$ref": "#/definitions/error"
       }
     },
     "401": {
       "description": "Authentication required to access data",
       "schema": {
-        "$ref": "#/definitions/error_response"
+        "$ref": "#/definitions/error"
       }
     },
     "403": {
       "description": "Access denied to protected data",
       "schema": {
-        "$ref": "#/definitions/error_response"
+        "$ref": "#/definitions/error"
       }
     },
     "409": {
       "description": "Query parameters conflict or are malformed",
       "schema": {
-        "$ref": "#/definitions/error_response"
+        "$ref": "#/definitions/error"
       }
     },
     "default": {
