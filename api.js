@@ -1,17 +1,13 @@
-const SansServer = require('sans-server');
+const SansServer        = require('sans-server');
 const SansServerSwagger = require('sans-server-swagger');
-const wso2 = require('byu-wso2-request');
-const meta = require('meta-ngin');
-const auth = require('./auth');
 
+// create a sans-server instance and export it
 const api = SansServer();
 module.exports = api;
 
+// add swagger middleware to the sans-server instance.
 api.use(SansServerSwagger({
     controllers: './controllers',
     development: true,
-    exception: function (res, state) {
-        res.body(meta(state.statusCode, state.body));
-    },
     swagger: './swagger.json'
 }));
