@@ -16,7 +16,7 @@
  **/
 'use strict';
 const path              = require('path');
-const api               = require('node-byuapi-framework');
+const api               = require('./api');
 const express           = require('express');
 const bodyParser        = require('body-parser');
 // ----- Set up the Express server -----
