@@ -16,7 +16,7 @@
  **/
 'use strict';
 const path              = require('path');
-const api               = require('node-byuapi-framework');
+const api               = require('./api');
 const express           = require('express');
 const bodyParser        = require('body-parser');
 // ----- Set up the Express server -----
@@ -34,6 +34,7 @@ app.use(api.express({
     validateExamples: true,
     development: true
 }));
+
 let port = process.env.PORT || 8081;
 app.listen(port, function () {
     console.log("Beginning server");
