@@ -26,6 +26,11 @@ app.get('/xhealth', (req, res) => {
   res.sendStatus(200);
 });
 
+// Added ----------------------------------
+app.get('/xhealth', function (req, res) {
+    res.send("I'm alive!")
+});
+
 app.use(bodyParser.json());
 app.use(api.express({
   controllers: path.resolve(__dirname, './controllers'),
@@ -34,7 +39,8 @@ app.use(api.express({
   validateExamples: true,
   development: true
 }));
-let port = process.env.PORT || 8081;
+
+let port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log("Beginning server");
   console.log("    [INFO] Server running on port: " + port);
