@@ -1,5 +1,5 @@
 {
-  "name": "domains-identity-visa-types-jg",
+  "name": "test",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -12,5 +12,21 @@
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
     "pug": "2.0.0-beta11"
-  }
+  },
+  "description": "Attempt to install sans-server modules",
+  "main": "api.js",
+  "directories": {
+    "test": "tests"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byu-oit/domains-identity-visa-types-jg.git"
+  },
+  "author": "Joseph",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/byu-oit/domains-identity-visa-types-jg/issues"
+  },
+  "homepage": "https://github.com/byu-oit/domains-identity-visa-types-jg#readme"
 }
