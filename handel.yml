@@ -15,5 +15,6 @@ environments:
       health_check_url: /xhealth
       dependencies:
       - bucket
+      key_name: BobPeep
     bucket:
       type: s3
