@@ -11,9 +11,9 @@ pipelines:
       repo: domains-identity-visa-types-jg
       branch: master
     - type: codebuild
-      name: Construction
+      name: Build
       build_image: aws/codebuild/nodejs:6.3.1
     - type: handel
-      name: Deployment
+      name: Deploy
       environments_to_deploy:
       - dev
