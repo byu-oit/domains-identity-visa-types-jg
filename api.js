@@ -30,11 +30,11 @@ app.use(bodyParser.json());
 app.use(expressTranslator(api));
 
 // start the server listening
-app.listen(port, function(err) {
-    if (err) {
-        console.error(err.stack);
-        process.exit(1);
-    } else {
-        console.log('Server listening on port ' + port);
-    }
-});
+// app.listen(port, function(err) {
+//     if (err) {
+//         console.error(err.stack);
+//         process.exit(1);
+//     } else {
+//         console.log('Server listening on port ' + port);
+//     }
+// });
