@@ -1,6 +1,6 @@
 const SansServer        = require('sans-server');
 const SansServerSwagger = require('sans-server-swagger');
-let port = 8081;
+
 
 // create a sans-server instance and export it
 const api = SansServer();
