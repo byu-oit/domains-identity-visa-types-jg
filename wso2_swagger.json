@@ -1,5 +1,5 @@
 {
-  "swagger":"2.1",
+  "swagger":"2.0",
   "info":{
     "title":"identityVisaType",
     "description":"US Visa Types for CES School Admissions",
