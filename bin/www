@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-var app = require('../app');
+var app = require('../formerly_known_as_app');
 var debug = require('debug')('domains-identity-visa-types-jg:server');
 var http = require('http');
 
