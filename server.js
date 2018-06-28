@@ -45,7 +45,7 @@ api.use(sansServerSwagger({
 
 app.use(expressTranslator(api));
 
-let port = process.env.PORT || 3000;
+let port = process.env.PORT || 8081;
 app.listen(port, function () {
     console.log("Beginning server");
     console.log("    [INFO] Server running on port: " + port);
