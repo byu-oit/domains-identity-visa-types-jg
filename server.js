@@ -16,9 +16,12 @@
  **/
 'use strict';
 const path              = require('path');
-const api               = require('./api');
 const express           = require('express');
 const bodyParser        = require('body-parser');
+const sansServerSwagger = require('sans-server-swagger');
+const expressTranslator = require('sans-server-express');
+const sansServer        = require('sans-server');
+
 // ----- Set up the Express server -----
 const app = express();
 
@@ -27,13 +30,16 @@ app.get('/xhealth', (req, res) => {
 });
 
 app.use(bodyParser.json());
-app.use(api.express({
+const api = sansServer();
+api.use(sansServerSwagger({
     controllers: path.resolve(__dirname, './controllers'),
     swagger: path.resolve(__dirname, './swagger.json'),
     ignoreBasePath: false,
     validateExamples: true,
     development: true
 }));
+
+app.use(expressTranslator(api));
 
 let port = process.env.PORT || 8081;
 app.listen(port, function () {
