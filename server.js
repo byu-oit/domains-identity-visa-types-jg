@@ -25,6 +25,10 @@ const sansServer        = require('sans-server');
 // ----- Set up the Express server -----
 const app = express();
 
+app.get('/xhealth', function (req, res) {
+    res.send("I'm alive!")
+});
+
 app.get('/xhealth', (req, res) => {
     res.sendStatus(200);
 });
