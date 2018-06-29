@@ -2751,7 +2751,6 @@
     },
     "/{visa_type}/logs":{
       "x-controller":"visa_type_logs",
-
       "get":{
         "summary":"identity Codes Archive",
         "description":"Retrieve the collection of logs for a visa_type",
