@@ -1381,19 +1381,19 @@
     },
     "/{visa_type}":{
       "x-controller":"visa_type",
-      "parameters":[
-        {
-          "name":"visa_type",
-          "in":"path",
-          "description":"visa_type path parameter",
-          "required":true,
-          "type":"string"
-        }
-      ],
       "get":{
         "summary":"Get one specific visa_type",
         "description":"Retrieve a specific visa_type",
         "operationId":"getVisaType",
+        "parameters":[
+          {
+            "name":"visa_type",
+            "in":"path",
+            "description":"visa_type path parameter",
+            "required":true,
+            "type":"string"
+          }
+        ],
         "tags":[
           "identity",
           "Codes"
@@ -1942,6 +1942,13 @@
         "description":"Modify a visa_type",
         "operationId":"modifyVisaType",
         "parameters":[
+          {
+            "name":"visa_type",
+            "in":"path",
+            "description":"visa_type path parameter",
+            "required":true,
+            "type":"string"
+          },
           {
             "name":"visa_type_modify",
             "in":"body",
@@ -2528,6 +2535,15 @@
         "summary":"Delete a specific visa_type",
         "description":"Removes a visa_type",
         "operationId":"removeVisaType",
+        "parameters":[
+          {
+            "name":"visa_type",
+            "in":"path",
+            "description":"visa_type path parameter",
+            "required":true,
+            "type":"string"
+          }
+        ],
         "tags":[
           "identity",
           "Codes"
@@ -2735,19 +2751,20 @@
     },
     "/{visa_type}/logs":{
       "x-controller":"visa_type_logs",
-      "parameters":[
-        {
-          "name":"visa_type",
-          "in":"path",
-          "description":"visa_type path parameter",
-          "required":true,
-          "type":"string"
-        }
-      ],
+
       "get":{
         "summary":"identity Codes Archive",
         "description":"Retrieve the collection of logs for a visa_type",
         "operationId":"getVisaTypeLogs",
+        "parameters":[
+          {
+            "name":"visa_type",
+            "in":"path",
+            "description":"visa_type path parameter",
+            "required":true,
+            "type":"string"
+          }
+        ],
         "tags":[
           "identity",
           "Codes"
