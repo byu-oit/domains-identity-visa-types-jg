@@ -1,0 +1,78 @@
+{
+  "visa_type_logs": [
+    {
+      "log_action": "visa_types__create",
+      "visa": "B1",
+      "description" : "Business Visitor",
+      "active_status": "yes",
+      "updated_by_id": "INIT",
+      "date_time_updated": "25-SEP-17"
+    },
+    {
+      "log_action": "visa_types__create",
+      "visa": "B2",
+      "description": "Tourist",
+      "active_status": "yes",
+      "updated_by_id": "INIT",
+      "date_time_updated": "25-SEP-17"
+    },
+    {
+      "log_action": "visa_types__create",
+      "visa": "F1",
+      "description": "Full Time Student",
+      "active_status": "yes",
+      "updated_by_id": "INIT",
+      "date_time_updated": "25-SEP-17"
+
+    },
+    {
+      "log_action": "visa_types__create",
+      "visa": "F2",
+      "description": "Dependent of F1",
+      "active_status": "yes",
+      "updated_by_id": "INIT",
+      "date_time_updated": "25-SEP-17"
+    },
+    {
+      "log_action": "visa_types__create",
+      "visa": "H4",
+      "description": "Dependent of H",
+      "active_status": "yes",
+      "updated_by_id": "INIT",
+      "date_time_updated": "25-SEP-17"
+    },
+    {
+      "log_action": "visa_types__create",
+      "visa": "J1",
+      "description": "Exchange Visitor",
+      "active_status": "yes",
+      "updated_by_id": "INIT",
+      "date_time_updated": "25-SEP-17"
+    },
+    {
+      "log_action": "visa_types__create",
+      "visa": "J2",
+      "description": "Dependent of J1",
+      "active_status": "yes",
+      "updated_by_id": "INIT",
+      "date_time_updated": "25-SEP-17"
+    },
+    {
+      "log_action": "visa_types__create",
+      "visa": "OTH",
+      "description": "Other",
+      "active_status": "yes",
+      "updated_by_id": "INIT",
+      "date_time_updated": "25-SEP-17"
+
+    },
+    {
+      "log_action": "visa_types__create",
+      "visa": "R1",
+      "description": "Religious Worker",
+      "active_status": "yes",
+      "updated_by_id": "INIT",
+      "date_time_updated": "25-SEP-17"
+    }
+  ]
+}
