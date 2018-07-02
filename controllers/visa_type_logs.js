@@ -24,5 +24,5 @@ exports.getVisaTypeLogs = function (req, res) {
 
 exports.getVisaTypeLogs.mock = function (req, res) {
   console.log("Invoked getVisaTypeLogs.mock")
-  res.send(req.swagger['x-mock_json'].visa_type_logs);
+  res.send(req.swagger.root['x-mock_json'].visa_type_logs);
 };
