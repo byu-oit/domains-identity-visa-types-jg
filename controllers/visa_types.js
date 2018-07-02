@@ -24,7 +24,7 @@ exports.getVisaTypes = function (req, res) {
 
 exports.getVisaTypes.mock = function (req, res) {
   console.log("Invoked getVisaTypes.mock")
-  res.send(req.swagger.root['x-mock_json'].visa_types);
+  res.send(req.swagger['x-mock_json'].visa_types);
 };
 
 exports.createVisaType = function (req, res) {
@@ -34,5 +34,5 @@ exports.createVisaType = function (req, res) {
 
 exports.createVisaType.mock = function (req, res) {
   console.log("Invoked createVisaType.mock")
-  res.status(201).send(req.swagger.root['x-mock_json'].visa_types.values[0]);
+  res.status(201).send(req.swagger['x-mock_json'].visa_types.values[0]);
 };
