@@ -15,14 +15,22 @@
     "sans-server-swagger": "^0.3.14",
     "sans-server-express": "0.0.3",
     "express": "^4.16.3",
-    "body-parser": "^1.18.3"
+    "body-parser": "^1.18.3",
+    "aws-sdk": "^2.77.0",
+    "byu-jwt": "^0.1.4",
+    "meta-ngin": "^1.2.6",
+    "identity-codes-security": "^0.0.1"
   },
   "description": "Attempt to install sans-server modules",
   "main": "api.js",
   "directories": {
     "test": "tests"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@byu-oit/byuapi": "0.0.10",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/byu-oit/domains-identity-visa-types-jg.git"
