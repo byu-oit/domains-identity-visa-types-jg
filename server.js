@@ -18,9 +18,10 @@
 const path              = require('path');
 const express           = require('express');
 const bodyParser        = require('body-parser');
-const sansServerSwagger = require('sans-server-swagger');
+//const sansServerSwagger = require('sans-server-swagger');
 const expressTranslator = require('sans-server-express');
-const sansServer        = require('sans-server');
+//const sansServer        = require('sans-server');
+const api = require('./bin/api');
 
 // ----- Set up the Express server -----
 const app = express();
@@ -28,7 +29,9 @@ const app = express();
 app.get('/xhealth', (req, res) => {
     res.sendStatus(200);
 });
+app.use(bodyParser.json());
 
+/*
 app.use(bodyParser.json());
 const api = sansServer();
 api.use(sansServerSwagger({
@@ -38,6 +41,7 @@ api.use(sansServerSwagger({
     validateExamples: true,
     development: true
 }));
+*/
 
 app.use(expressTranslator(api));
 
