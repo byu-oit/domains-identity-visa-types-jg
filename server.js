@@ -21,7 +21,7 @@ const bodyParser        = require('body-parser');
 //const sansServerSwagger = require('sans-server-swagger');
 const expressTranslator = require('sans-server-express');
 //const sansServer        = require('sans-server');
-const api = require('api');  //OG ./bin/api
+const api = require('/api');  //OG ./bin/api
 
 // ----- Set up the Express server -----
 const app = express();
