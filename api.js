@@ -12,8 +12,6 @@ const security = require('identity-codes-security');
 const config = controllers.retrieve;
 const WELLKNOWN_URL = 'https://api.byu.edu/.well-known/openid-configuration';
 
-
-
 let clientKey;
 let clientSecret;
 let oauth_set = false;
