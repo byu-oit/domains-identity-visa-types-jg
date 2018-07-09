@@ -16,6 +16,25 @@
  */
 'use strict';
 
+const controllers = require('identity-code-api-controllers');
+
+controllers.init({
+    bucketName: 'visa-types-giles-dev-bucket-s3',
+    storageFile: 'visa_types.json',
+    logFile: 'visa_types_logs.json',
+    resourceNameSingular: 'visa_type',
+    resourceNamePlural: 'visa_types',
+    raiseEvents: true
+});
+
+exports.getVisaTypes = controllers.getAllResources;
+exports.createVisaType = controllers.createResource;
+//exports.getVisaType = controllers.getResource;
+//exports.modifyVisaType = controllers.modifyResource;
+//exports.removeVisaType = controllers.deleteResource;
+//exports.getVisaTypeLogs = controllers.getResourceLogs;
+
+
 // ----- Exported Endpoint Handlers -----
 exports.getVisaTypes = function (req, res) {
   console.log("Invoked getVisaTypes")
