@@ -21,7 +21,7 @@ const bodyParser        = require('body-parser');
 //const sansServerSwagger = require('sans-server-swagger');
 const expressTranslator = require('sans-server-express');
 //const sansServer        = require('sans-server');
-const api = require('/api');  //OG ./bin/api
+const api = require('./api');  //OG ./bin/api
 
 // ----- Set up the Express server -----
 const app = express();
@@ -30,18 +30,6 @@ app.get('/xhealth', (req, res) => {
     res.sendStatus(200);
 });
 app.use(bodyParser.json());
-
-/*
-app.use(bodyParser.json());
-const api = sansServer();
-api.use(sansServerSwagger({
-    controllers: path.resolve(__dirname, './controllers'),
-    swagger: path.resolve(__dirname, './swagger.json'),
-    ignoreBasePath: false,
-    validateExamples: true,
-    development: true
-}));
-*/
 
 app.use(expressTranslator(api));
 
@@ -52,3 +40,4 @@ app.listen(port, function () {
     console.log("    [INFO] Controller path = " + path.resolve(__dirname, './controllers'));
     console.log("    [INFO] Swagger path = " + path.resolve(__dirname, './swagger.json'));
 });
+
