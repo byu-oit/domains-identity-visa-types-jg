@@ -18,14 +18,14 @@
 
 const controllers = require('identity-code-api-controllers');
 
-controllers.init({
-    bucketName: 'visa-types-giles-dev-bucket-s3',
-    storageFile: 'visa_types.json',
-    logFile: 'visa_types_logs.json',
-    resourceNameSingular: 'visa_type',
-    resourceNamePlural: 'visa_types',
-    raiseEvents: true
-});
+// controllers.init({
+//     bucketName: 'visa-types-giles-dev-bucket-s3',
+//     storageFile: 'visa_types.json',
+//     logFile: 'visa_types_logs.json',
+//     resourceNameSingular: 'visa_type',
+//     resourceNamePlural: 'visa_types',
+//     raiseEvents: true
+// });
 
 exports.getVisaTypes = controllers.getAllResources;
 exports.createVisaType = controllers.createResource;
