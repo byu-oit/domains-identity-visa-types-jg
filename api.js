@@ -18,11 +18,12 @@ let oauth_set = false;
 let setup_error = '';
 
 controllers.init({
-    bucketName: 'identity-level-of-education-dev-bucket-s3',
-    storageFile: 'levels_of_education.json',
-    logFile: 'level_of_education_logs.json',
-    resourceNameSingular: 'level_of_education',
-    resourceNamePlural: 'levels_of_education'
+    bucketName: 'visa-types-giles-dev-bucket-s3',
+    storageFile: 'visa_types.json',
+    logFile: 'visa_types_logs.json',
+    resourceNameSingular: 'visa_type',
+    resourceNamePlural: 'visa_types',
+    raiseEvents: true
 });
 
 handelUtils.fetchParameters(AWS, [`clientKey`, `clientSecret`])
