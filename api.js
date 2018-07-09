@@ -1,30 +1,3 @@
-/*
-const SansServer        = require('sans-server');
-const SansServerSwagger = require('sans-server-swagger');
-const wso2 = require('byu-wso2-request');
-const meta = require('meta-ngin');
-const auth = require('./auth');
-
-*/
-
-
-
-/*
-// create a sans-server instance and export it
-const api = SansServer();
-module.exports = api;
-*/
-
-// add swagger middleware to the sans-server instance.\
-/*
-api.use(SansServerSwagger({
-    controllers: './controllers',
-    development: true,
-    swagger: './swagger.json'
-}));
-*/
-
-//===========================================================================================================
 const AWS = require("aws-sdk");
 AWS.config.update({region: 'us-west-2'});
 const SansServer = require('sans-server');
@@ -111,52 +84,16 @@ api.use(SansServerSwagger({
 }));
 
 
+// My attempt at controllers below =======================================================================
 
-//======== Below is the Express Example from node framework github ============================
-
-//const api               = require('./api');
-const bodyParser        = require('body-parser');
-const express           = require('express');
-const expressTranslator = require('sans-server-express');
-
-// create an express app
-const app = express();
-
-// add the body parser middleware - only needed if the API will accept JSON bodies in the request
-app.use(bodyParser.json());
-
-// integrate sans-server instance with express
-app.use(expressTranslator(api));
-
-// start the server listening
-// app.listen(port, function(err) {
-//     if (err) {
-//         console.error(err.stack);
-//         process.exit(1);
-//     } else {
-//         console.log('Server listening on port ' + port);
-//     }
-// });
-
-// Everything before the addition of tutorial 9a works.  Healthy Beanstalk and green codepipeline.
-// TUTORIAL 9A BELOW =======================================================================
-
-const controllers = require('identity-code-api-controllers');
-
-controllers.init({
-    bucketName: 'visa-types-giles-dev-bucket-s3',
-    storageFile: 'visa_types.json',
-    logFile: 'visa_types_logs.json',
-    resourceNameSingular: 'visa_type',
-    resourceNamePlural: 'visa_types'
-});
-
+/*
 exports.getVisaTypes = controllers.getAllResources;
 exports.createVisaType = controllers.createResource;
 exports.getVisaType = controllers.getResource;
 exports.modifyVisaType = controllers.modifyResource;
 exports.removeVisaType = controllers.deleteResource;
 exports.getVisaTypeLogs = controllers.getResourceLogs;
+*/
 
 
-// TUTORIAL 9A ABOVE ==========================================================================
+
