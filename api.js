@@ -8,23 +8,23 @@ const AuthenticationError = byuJWT.AuthenticationError;
 const handelUtils = require('handel-utils');
 const meta = require('meta-ngin');
 const security = require('identity-codes-security');
-const controllers = require('identity-code-api-controllers');
 const config = controllers.retrieve;
 const WELLKNOWN_URL = 'https://api.byu.edu/.well-known/openid-configuration';
+//const controllers = require('identity-code-api-controllers');
 
 let clientKey;
 let clientSecret;
 let oauth_set = false;
 let setup_error = '';
 
-controllers.init({
-    bucketName: 'visa-types-giles-dev-bucket-s3',
-    storageFile: 'visa_types.json',
-    logFile: 'visa_types_logs.json',
-    resourceNameSingular: 'visa_type',
-    resourceNamePlural: 'visa_types',
-    raiseEvents: true
-});
+// controllers.init({
+//     bucketName: 'visa-types-giles-dev-bucket-s3',
+//     storageFile: 'visa_types.json',
+//     logFile: 'visa_types_logs.json',
+//     resourceNameSingular: 'visa_type',
+//     resourceNamePlural: 'visa_types',
+//     raiseEvents: true
+// });
 
 handelUtils.fetchParameters(AWS, [`clientKey`, `clientSecret`])
     .then(params => {
