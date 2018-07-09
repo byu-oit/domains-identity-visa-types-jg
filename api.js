@@ -4,6 +4,7 @@ const SansServer = require('sans-server');
 const SansServerSwagger = require('sans-server-swagger');
 const wso2 = require('byu-wso2-request');
 const byuJWT = require('byu-jwt');
+const controllers = require('identity-code-api-controllers');
 const AuthenticationError = byuJWT.AuthenticationError;
 const handelUtils = require('handel-utils');
 const meta = require('meta-ngin');
@@ -11,7 +12,7 @@ const security = require('identity-codes-security');
 const config = controllers.retrieve;
 const WELLKNOWN_URL = 'https://api.byu.edu/.well-known/openid-configuration';
 
-const controllers = require('identity-code-api-controllers');
+
 
 let clientKey;
 let clientSecret;
