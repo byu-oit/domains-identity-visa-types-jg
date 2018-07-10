@@ -41,3 +41,5 @@ app.listen(port, function () {
     console.log("    [INFO] Swagger path = " + path.resolve(__dirname, './swagger.json'));
 });
 
+// util.js has the error logs gary added
+// If it get an unauthorized error, it is because IAM Test User is not authorized to raise events in event hub.
