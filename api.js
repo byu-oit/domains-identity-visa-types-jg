@@ -23,7 +23,7 @@ controllers.init({
      logFile: 'visa_types_logs.json',
      resourceNameSingular: 'visa_type',
      resourceNamePlural: 'visa_types',
-     raiseEvents: true
+     raiseEvents: false
  });
 
 handelUtils.fetchParameters(AWS, [`clientKey`, `clientSecret`])
