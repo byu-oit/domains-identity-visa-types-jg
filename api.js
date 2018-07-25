@@ -17,6 +17,8 @@ let clientSecret;
 let oauth_set = false;
 let setup_error = '';
 
+//===========================================================================================================
+
 controllers.init({
      bucketName: 'visa-types-giles-dev-bucket-s3',
      storageFile: 'visa_types.json',
@@ -25,6 +27,8 @@ controllers.init({
      resourceNamePlural: 'visa_types',
      raiseEvents: false
  });
+
+//===========================================================================================================
 
 handelUtils.fetchParameters(AWS, [`clientKey`, `clientSecret`])
     .then(params => {
@@ -43,6 +47,8 @@ handelUtils.fetchParameters(AWS, [`clientKey`, `clientSecret`])
         setup_error = err.message;
         console.error('    [ERROR] Failed to retrieved Parameter Store variables:', err.message);
     });
+
+//==========================================================================================================
 
 const api = SansServer();
 module.exports = api;
@@ -83,18 +89,4 @@ api.use(SansServerSwagger({
     },
     swagger: './swagger.json'
 }));
-
-
-// My attempt at controllers below =======================================================================
-
-/*
-exports.getVisaTypes = controllers.getAllResources;
-exports.createVisaType = controllers.createResource;
-exports.getVisaType = controllers.getResource;
-exports.modifyVisaType = controllers.modifyResource;
-exports.removeVisaType = controllers.deleteResource;
-exports.getVisaTypeLogs = controllers.getResourceLogs;
-*/
-
-
 
